@@ -5,6 +5,10 @@ VisualStudioVersion = 17.4.33205.214
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EasyTricks.UI", "EasyTricks.UI\EasyTricks.UI.csproj", "{22735DE4-08BE-44F0-829E-EA118FE84BBA}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EasyTricks.DAL", "EasyTricks.DAL\EasyTricks.DAL.csproj", "{44113E70-38EF-4854-8884-CDBF2285D799}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EasyTricks.Models", "EasyTricks.Models\EasyTricks.Models.csproj", "{6D0C349A-17DA-4025-BEDF-6D4A5FCD22CE}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +19,14 @@ Global
 		{22735DE4-08BE-44F0-829E-EA118FE84BBA}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{22735DE4-08BE-44F0-829E-EA118FE84BBA}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{22735DE4-08BE-44F0-829E-EA118FE84BBA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{44113E70-38EF-4854-8884-CDBF2285D799}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{44113E70-38EF-4854-8884-CDBF2285D799}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{44113E70-38EF-4854-8884-CDBF2285D799}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{44113E70-38EF-4854-8884-CDBF2285D799}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6D0C349A-17DA-4025-BEDF-6D4A5FCD22CE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6D0C349A-17DA-4025-BEDF-6D4A5FCD22CE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6D0C349A-17DA-4025-BEDF-6D4A5FCD22CE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6D0C349A-17DA-4025-BEDF-6D4A5FCD22CE}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

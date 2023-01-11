@@ -1,0 +1,154 @@
+*
+{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+    list-style: none;
+    font-family: sans-serif;
+}
+body
+{
+    background: #f5f6fa;
+}
+.wrapper > .side-bar
+{
+    background: rgb(5, 68, 104);
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 225px;
+    height: 100%;
+    transition: all 0.5s ease;
+}
+.sider-bar-top {
+   
+    padding: 7px 17px;
+    border-bottom: 1px solid;
+    background: rgb(7, 105, 185);
+    border-right: 1px solid;
+}
+.sider-bar-top a
+{
+    display: flex;
+    text-decoration: none;
+}
+
+
+.sider-bar-top a img {
+    width: 50px;
+    height: 50px;
+}
+.sider-bar-top a h4 {
+   
+    color: #fff;
+    font-size: 20px;
+    font-weight: 700;
+    line-height: 47px;
+    margin-left: 10px;
+}
+.menu-item {
+  
+}
+.menu-item ul {
+    margin: 0;
+    padding: 0;
+}
+.menu-item li {
+    padding: 5px 0;
+    padding-left: 20px;
+    /* font-size: 17px; */
+    /* color: #f6f6f6; */
+}
+.menu-item ul li a {
+    color: #bfbfbf;
+    font-size: 21px;
+}.menu-item ul li a {
+    color: #bfbfbf;
+    font-size: 21px;
+}
+li.nav-title {
+    color: #C9C9C9;
+    font-size: 15px;
+    padding: 9px 0;
+    padding-left: 20px;
+    /* border-bottom: 1px solid #616d71; */
+}
+
+
+
+
+li.sidebar-item a {
+    text-decoration: none;
+}
+li.sidebar-item:hover {
+    background: #1f5b83;
+    /* color: #fff; */
+}
+li.sidebar-item:hover > a
+{
+    color: #fff;
+}
+
+
+
+
+.sub-menu > ul {
+    padding-left: 35px;
+}
+.sub-menu> ul li{transition: all .6s ease;}
+.sub-menu >ul li a {
+    font-size: 16px;
+}
+.sub-menu ul li:hover {
+    padding-left: 3px;
+}
+.sub-menu ul li:hover >a
+{
+    color: #fff;
+}
+
+
+/* top bar */
+.wrapper .section
+{
+    width: calc(100%-225px);
+    margin-left: 225px;
+    transition: all 0.5s ease;
+}
+.wrapper .section .top-menu {
+    background: rgb(7, 105, 185);
+    height: 70px;
+    display: flex;
+    align-items: center;
+    padding: 0 30px;
+}
+.wrapper .section .top-menu .hamburger a{font-size: 28px;color: #fff;}
+
+body.active .wrapper .side-bar
+{
+    margin-left: -225px;
+}
+body.active .wrapper .section
+{
+    margin-left: 0;
+    width: 100%;
+}
+
+/*content*/
+
+ .admin-content {
+    width: calc(100%-225px);
+    margin-left: 225px;
+    transition: all 0.5s ease;
+}
+
+body.content-active .wrapper .admin-content {
+    margin-left: 0;
+    width: 100%;
+}
+.content-wrapper {
+    width: 95%;
+    margin: auto;
+    padding: 15px;
+}

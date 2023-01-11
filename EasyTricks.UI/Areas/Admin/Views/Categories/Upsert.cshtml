@@ -1,0 +1,45 @@
+﻿@model CategoryVM
+@{
+    ViewData["Title"] = "Upsert";
+}
+
+<div class="py-3">
+    <div class="row p-4">
+        <div class="col-md-12">
+
+            <form method="post" asp-action="Upsert">
+                <input hidden asp-for="Category.Id" />
+                <div class="border mb-2 p-4">
+                    <div class="page-title">
+                        
+                       @* <h2>@(Model.Category.Id == 0 ? "Create" : "Category") Category</h2>*@
+                        <hr />
+                    </div>
+
+                    <div class="row">
+
+                        <div class="mb-3">
+                            <label asp-for="Category.Title"></label>
+                            <input asp-for="Category.Title" class="form-control" />
+                            <span asp-validation-for="Category.Title" class="text-danger"></span>
+                        </div>
+                        <div class="mb-3">
+                            <button class="btn btn-primary" type="submit" width="150px">Submit</button>
+                            <a asp-action="Index" class="btn btn-secondary" width="150px">Back to List</a>
+                        </div>
+                        
+                    </div>
+                    
+                </div>
+            </form>
+           
+        </div>
+    </div>
+</div>
+
+@section Scripts
+    {
+    @{
+        <partial name="_ValidationScriptsPartial.cshtml" />
+    }
+}

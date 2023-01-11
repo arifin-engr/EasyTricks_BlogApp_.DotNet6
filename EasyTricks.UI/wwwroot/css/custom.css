@@ -1,0 +1,54 @@
+body {
+    background-image:url('../images/customImages/auth-bg.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+ .flexbox-container {
+    display: flex;
+    align-items: center;
+    height: 100vh;
+    justify-content: center;
+}
+.divider {
+    display: block;
+    text-align: center;
+    overflow: hidden;
+    white-space: nowrap;
+    margin: 1rem 0;
+}
+.divider .divider-text {
+    position: relative;
+    display: inline-block;
+    font-size: 1rem;
+    padding: 0 1rem;
+    background-color: #FFFFFF;
+}
+.divider .divider-text:before {
+    right: 100%;
+}
+.divider .divider-text:after {
+    left: 100%;
+}
+.divider .divider-text:before, .divider .divider-text:after {
+    content: "";
+    position: absolute;
+    top: 50%;
+    width: 9999px;
+    border-top: 1px solid #DFE3E7;
+}
+.ml-auto {
+    margin-left: auto;
+}
+a.card-link {
+    text-decoration: none;
+}
+.card.bg-authentication {
+    box-shadow: -8px 20px 25px 0 rgba(25, 42, 70, 0.3);
+}
+.card-header {
+    padding: var(--bs-card-cap-padding-y) var(--bs-card-cap-padding-x);
+    margin-bottom: 0;
+    color: var(--bs-card-cap-color);
+    background-color: #fff; 
+    border-bottom: 0; 
+}
