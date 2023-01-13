@@ -1,7 +1,37 @@
-﻿
+﻿@model IEnumerable<Article>
 @{
     ViewData["Title"] = "Index";
 }
 
-
+<div class="row">
+    <div class="col-12 content-area">
+        <div class="row">
+            <div class="col-12 posts">
+                <div class="row">
+                    <div class="col-12">
+                        <div class="row post-row">
+                            @foreach (var item in Model)
+                            {
+                                <div class="col-12 col-md-4">
+                                    <div class="post-block-container">
+                                        <a class="post-block" href="/post/tell-dont-ask-design-principle">
+                                            <div class="row">
+                                                <div class="col-12 post-title">@item.Title</div>
+                                            </div>
+                                            <div class="row">
+                                                <div class="col-12 post-description">@Html.Raw(item.Description)</div>
+                                            </div>
+                                        </a>
+                                    </div>
+                                </div>
+                            }
+                          
+    </div>
+</div>
+</div>
+ </div>
+</div>
+    </div>
+</div>
+    
 

@@ -1,0 +1,49 @@
+﻿.content-area {
+    padding-top: 86px;
+    padding-bottom: 147px;
+}
+ .content-area .posts .row:first-child .post-row {
+    padding-top: 0;
+}
+
+ .content-area .posts .post-row {
+    padding-top: 15px;
+    padding-bottom: 15px;
+}
+    .content-area .posts .post-row .post-block-container {
+        position: relative;
+        height: 100%;
+    }
+    .content-area .posts .post-row .post-block {
+        display: block;
+        padding: 15px;
+        min-height: 370px;
+        height: 100%;
+        color: #303952;
+        background: #fff;
+        box-shadow: 0 1px 3px rgb(0 0 0 / 12%), 0 1px 2px rgb(0 0 0 / 24%);
+        transition: all .25s ease-in-out;
+        border-radius: 4px;
+    }
+.content-area .posts .post-row .post-block .post-title {
+    display: block;
+    font-size: 20px;
+}
+html body .content-area .posts .post-row .post-block .post-description {
+    font-size: 14px;
+    padding-top: 15px;
+    color: #444;
+}
+
+.content-area .posts .post-row .post-block:hover {
+    background-color: #fafbfc;
+}
+
+ .content-area .posts .post-row .post-block:active, html body .content-area .posts .post-row .post-block:focus, html body .content-area .posts .post-row .post-block:hover, html body .content-area .posts .post-row .post-block:visited {
+    color: #303952;
+    text-decoration: none;
+}
+
+ .content-area .posts .post-row .post-block:hover {
+    box-shadow: 0 10px 20px rgb(0 0 0 / 19%), 0 6px 6px rgb(0 0 0 / 23%);
+}
