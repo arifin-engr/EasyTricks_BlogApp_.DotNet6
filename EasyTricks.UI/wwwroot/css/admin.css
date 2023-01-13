@@ -17,7 +17,7 @@ body
     position: fixed;
     top: 0;
     left: 0;
-    width: 225px;
+    width: 280px;
     height: 100%;
     transition: all 0.5s ease;
 }
@@ -112,8 +112,8 @@ li.sidebar-item:hover > a
 /* top bar */
 .wrapper .section
 {
-    width: calc(100%-225px);
-    margin-left: 225px;
+    width: calc(100-280px);
+    margin-left: 280px;
     transition: all 0.5s ease;
 }
 .wrapper .section .top-menu {
@@ -125,9 +125,8 @@ li.sidebar-item:hover > a
 }
 .wrapper .section .top-menu .hamburger a{font-size: 28px;color: #fff;}
 
-body.active .wrapper .side-bar
-{
-    margin-left: -225px;
+body.active .wrapper .side-bar {
+    margin-left: -280px;
 }
 body.active .wrapper .section
 {
@@ -137,9 +136,9 @@ body.active .wrapper .section
 
 /*content*/
 
- .admin-content {
-    width: calc(100%-225px);
-    margin-left: 225px;
+.admin-content {
+    width: calc(100%-280px);
+    margin-left: 280px;
     transition: all 0.5s ease;
 }
 

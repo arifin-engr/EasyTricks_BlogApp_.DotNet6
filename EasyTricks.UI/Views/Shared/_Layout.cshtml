@@ -7,10 +7,39 @@
     <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
     <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
     <link rel="stylesheet" href="~/EasyTricks.UI.styles.css" asp-append-version="true" />
+    <style>
+        html body {
+    min-height: 100%;
+    position: relative;
+}
+body {
+    margin: 0;
+    font-family: -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,"Noto Sans",sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol","Noto Color Emoji";
+    font-size: 1rem;
+    font-weight: 400;
+    line-height: 1.5;
+    color: #212529;
+    text-align: left;
+    background-color: #fff;
+}
+
+#particles-js {
+	height: 100%;
+	
+}
+.background-particles {
+    position: fixed;
+    top: 86px;
+    z-index: -1;
+    height: calc(100% - 172px);
+    width: calc(100% - 320px);
+    left: 160px;
+}
+    </style>
 </head>
 <body>
     <header>
-        <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-white border-bottom box-shadow mb-3">
+        <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-white border-bottom box-shadow ">
             <div class="container-fluid">
                 <a class="navbar-brand" asp-area="" asp-controller="Home" asp-action="Index"> <img class="nav-image" src="~/images/customImages/logo.png" /> Easy Tricks</a>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target=".navbar-collapse" aria-controls="navbarSupportedContent"
@@ -34,19 +63,27 @@
             </div>
         </nav>
     </header>
+    <div id="particles-js">
     <div class="container">
-        <main role="main" class="pb-3">
-            @RenderBody()
-        </main>
+        
+            <main role="main" class="pb-3">
+                @RenderBody()
+            </main>
+        </div>
+       
     </div>
 
-    <footer class="border-top footer text-muted">
+    <footer class="border-top footer text-muted bg-light">
         <div class="container">
             &copy; 2023 - EasyTricks.UI - <a asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
         </div>
     </footer>
     <script src="~/lib/jquery/dist/jquery.min.js"></script>
     <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="~/js/ParticleJs/particles.js"></script>
+    <script src="~/js/ParticleJs/app.js"></script>
+    
+ 
     <script src="~/js/site.js" asp-append-version="true"></script>
     @await RenderSectionAsync("Scripts", required: false)
 </body>

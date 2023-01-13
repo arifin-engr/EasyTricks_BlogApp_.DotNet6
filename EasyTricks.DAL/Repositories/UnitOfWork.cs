@@ -15,11 +15,14 @@ namespace EasyTricks.DAL.Repositories
         {
             _db=db;
             Category = new CategoryRepository(_db);
+            SubCategory = new SubCategoryRepository(_db);
             Article = new ArticleRepository(_db);
         }
         public ICategoryRepository Category { get; private set; }
 
         public IArticleRepository Article { get; private set; }
+
+        public ISubCategoryRepository SubCategory { get; private set; }
 
         public void Save()
         {

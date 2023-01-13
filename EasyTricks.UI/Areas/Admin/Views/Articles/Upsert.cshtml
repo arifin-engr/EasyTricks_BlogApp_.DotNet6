@@ -1,0 +1,136 @@
+﻿@model ArticleVM
+@{
+    ViewData["Title"] = "Upsert";
+}
+
+<div class="py-3">
+    <div class="row p-4">
+        <div class="col-md-12">
+
+            <form method="post" asp-action="Upsert" enctype="multipart/form-data">
+
+                <input hidden asp-for="Article.Id" />
+                <div class=" mb-2">
+                    <div class="page-title">
+
+
+                        <h2 class="text-primary">@(Model.Article.Id == 0 ? "Create" : "Update") Article</h2>
+                        <hr />
+                    </div>
+                    <div class="row">
+                        <div class="col-md-8 border p-4">
+                            <div class="row">
+
+                                <div class="mb-3">
+                                    <label asp-for="Article.Title"></label>
+                                    <input asp-for="Article.Title" class="form-control" />
+                                    <span asp-validation-for="Article.Title" class="text-danger"></span>
+                                </div>
+                                <div class="mb-3">
+                                    <label asp-for="Article.Author"></label>
+                                    <input asp-for="Article.Author" class="form-control" />
+                                    <span asp-validation-for="Article.Author" class="text-danger"></span>
+                                </div>
+
+                                <div class="col-md-6">
+                                    <div class="mb-3">
+                                        <label asp-for="Article.CategoryId"></label>
+                                        <select asp-for="Article.CategoryId" class="form-select" asp-items="@Model.CategoryList" id="CategoryItem">
+                                            <option selected disabled>Select Category</option>
+                                        </select>
+                                        <span asp-validation-for="Article.CategoryId" class="text-danger"></span>
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="mb-3">
+                                        <label asp-for="Article.SubCategoryId"></label>
+                                        <select asp-for="Article.SubCategoryId" class="form-select " id="SubCategoryItem">
+                                            <option selected disabled>Select Sub Category</option>
+                                        </select>
+                                        <span asp-validation-for="Article.SubCategoryId" class="text-danger"></span>
+                                    </div>
+                                </div>
+
+
+                                <div class="mb-3">
+                                    <label asp-for="Article.Description"></label>
+                                    <textarea asp-for="Article.Description" class="form-control"></textarea>
+                                    <span asp-validation-for="Article.Description" class="text-danger"></span>
+                                </div>
+                                <div class="mb-3">
+                                    @if (Model.Article.Id == 0)
+                                    {
+                                        <button class="btn btn-primary" type="submit" width="150px">Submit</button>
+                                    }
+                                    else
+                                    {
+                                        <button class="btn btn-primary" type="submit" width="150px">Update</button>
+                                    }
+
+                                    <a asp-action="Index" class="btn btn-secondary" width="150px">Back to List</a>
+                                </div>
+
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                          <div class=" mt-4 p-7">
+                                <img id="imageFileUpload" src="" style="width:400px;height:200px;border-radius:4px" />
+                                <div class="mb-3 mt-2 ">
+               
+                                        <label asp-for="Article.ImagePath"></label>
+                                    <input type="file" id="uploadbox" asp-for="Article.ImagePath" name="file" class="form-control" />
+                                    <span asp-validation-for="Article.ImagePath" class="text-danger"></span>
+               
+               
+                                </div>
+                        </div>
+
+                    </div>
+
+                    
+
+                </div>
+                </div>
+            </form>
+
+        </div>
+    </div>
+</div>
+
+@section Scripts
+    {
+        <script src="~/js/Article/article.js"></script>
+    <script>
+        tinymce.init({
+            selector: 'textarea',
+            plugins: 'anchor autolink charmap codesample emoticons image link lists media searchreplace table visualblocks wordcount checklist mediaembed casechange export formatpainter pageembed linkchecker a11ychecker tinymcespellchecker permanentpen powerpaste advtable advcode editimage tinycomments tableofcontents footnotes mergetags autocorrect typography inlinecss',
+            toolbar: 'undo redo | blocks fontfamily fontsize | bold italic underline strikethrough | link image media table mergetags | addcomment showcomments | spellcheckdialog a11ycheck typography | align lineheight | checklist numlist bullist indent outdent | emoticons charmap | removeformat',
+            tinycomments_mode: 'embedded',
+            tinycomments_author: 'Author name',
+            mergetags_list: [
+                { value: 'First.Name', title: 'First Name' },
+                { value: 'Email', title: 'Email' },
+            ]
+        });
+
+
+
+        document.getElementById('uploadbox').onchange = function () {
+
+            document.getElementById('imageFileUpload').src = URL.createObjectURL(uploadbox.files[0]);
+        }
+
+
+        
+    </script>
+
+    
+
+
+
+    @{
+        <partial name="_ValidationScriptsPartial.cshtml" />
+    }
+
+
+}

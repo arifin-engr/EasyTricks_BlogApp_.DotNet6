@@ -25,16 +25,30 @@ namespace EasyTricks.DAL.Repositories
            
         }
 
-        public IEnumerable<T> GetAll()
+        public IEnumerable<T> GetAll(string? includeProperties = null)
         {
             IQueryable<T> query = _dbset;
+            if (includeProperties!=null)
+            {
+                foreach (var inclueProp in includeProperties.Split(new char[] {','},StringSplitOptions.RemoveEmptyEntries))
+                {
+                    query = query.Include(inclueProp);
+                }
+            }
             return query.ToList();
         }
 
-        public T GetFirstOrDefault(Expression<Func<T, bool>> filter)
+        public T GetFirstOrDefault(Expression<Func<T, bool>> filter, string? includeProperties = null)
         {
             IQueryable<T> query = _dbset;
-             query.Where(filter);
+            query= query.Where(filter);
+            if (includeProperties != null)
+            {
+                foreach (var inclueProp in includeProperties.Split(new char[] { ',' }, StringSplitOptions.RemoveEmptyEntries))
+                {
+                    query = query.Include(inclueProp);
+                }
+            }
             return query.FirstOrDefault();
         }
 
@@ -47,5 +61,7 @@ namespace EasyTricks.DAL.Repositories
         {
            _dbset.RemoveRange(entity);
         }
+
+       
     }
 }

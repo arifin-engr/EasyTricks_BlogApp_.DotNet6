@@ -52,3 +52,21 @@ a.card-link {
     background-color: #fff; 
     border-bottom: 0; 
 }
+
+.password-container {
+    width: 400px;
+    position: relative;
+}
+
+    .password-container input[type="password"],
+    .password-container input[type="text"] {
+        
+    }
+
+.fa-eye {
+    position: absolute;
+    top: 55%;
+    right: 16%;
+    cursor: pointer;
+    color: lightgray;
+}

@@ -1,0 +1,73 @@
+﻿@{
+    ViewData["Title"] = "Index";
+}
+
+<div class="py-3">
+    <div class="row mb-3 pt-4">
+        <div class="col-md-6">
+            <div class="page-title">
+                <h2>Sub Category Manage</h2>
+                <hr />
+            </div>
+        </div>
+        <div class="col-md-6">
+            <div class="text-end">
+                <a asp-action="Upsert" asp-controller="SubCategories" class="btn btn-sm btn-primary"><i class="fa-solid fa-circle-plus"></i>&nbsp;Create  New Sub Catgory</a>
+            </div>
+        </div>
+
+    </div>
+
+    <div class="row">
+        <div class="col-md-12">
+            <table class="table table-bordered table-striped table-sm" id="tblSubCategory" width="100%">
+                <thead class="bg-primary">
+                    <tr>
+                        <th class="text-light">Name</th>
+                        <th class="text-light">Category</th>
+                        <th class="text-light">Action</th>
+                    </tr>
+                </thead>
+            </table>
+        </div>
+    </div>
+</div>
+
+
+
+
+
+@*modal*@
+
+<!-- Modal -->
+<div class="modal fade" id="subCategoryModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-scrollable">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">C Sharp</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+               
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                <button type="button" class="btn btn-primary">Save changes</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+
+
+
+
+@section Scripts
+    {
+    <script src="~/js/SubCategory/subCategory.js"></script>
+}
+
+

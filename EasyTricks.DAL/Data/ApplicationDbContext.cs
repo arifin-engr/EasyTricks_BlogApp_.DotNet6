@@ -18,5 +18,7 @@ namespace EasyTricks.DAL.Data
         }
         public DbSet<Article> Articles { get; set; }
         public DbSet<Category> Categories { get; set; }
+        public DbSet<SubCategory> SubCategories { get; set; }
+
     }
 }

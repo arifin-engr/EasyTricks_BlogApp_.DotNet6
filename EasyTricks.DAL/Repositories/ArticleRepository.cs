@@ -4,6 +4,7 @@ using EasyTricks.Models.AppEntity;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Linq.Expressions;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -18,7 +19,7 @@ namespace EasyTricks.DAL.Repositories
         }
         public void Update(Article entity)
         {
-            var article=_db.Articles.FirstOrDefault(entity=>entity.Id==entity.Id);
+            var article=_db.Articles.FirstOrDefault(x=>x.Id==entity.Id);
             if (article!=null) 
             {
                 article.Title = entity.Title;
@@ -31,5 +32,7 @@ namespace EasyTricks.DAL.Repositories
                 }
             }
         }
+
+        
     }
 }

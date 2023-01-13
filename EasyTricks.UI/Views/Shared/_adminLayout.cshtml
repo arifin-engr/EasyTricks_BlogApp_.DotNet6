@@ -4,17 +4,21 @@
 <head>
     <meta name="viewport" content="width=device-width" />
     <title>@ViewBag.Title</title>
+     <link href="//cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/css/toastr.min.css" rel="stylesheet" />
     <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/v/dt/dt-1.13.1/datatables.min.css" />
+   
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css" integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="stylesheet" href="~/css/bootstrap.min.css" />
+
     <link rel="stylesheet" href="~/css/admin.css" />
+    <link rel="stylesheet" href="~/css/site.css" />
 </head>
 <body>
     <div class="wrapper">
 
        @* side bar*@
-        <div class="side-bar">
-            <div class="sider-bar-top">
+        <div class="side-bar bg-primary">
+            <div class="sider-bar-top bg-success">
                 <a asp-area="Admin" asp-controller="Dashboared" asp-action="Index">
                     <img src="~/images/customImages/adminLogo.png" alt="">
                     <h4>Easy Tricks</h4>
@@ -63,6 +67,24 @@
                     </li>
 
 
+                    <li class="sidebar-item">
+                        <a class="" data-bs-toggle="collapse" href="#collapseSubCategoriesManage" role="button" aria-expanded="false" aria-controls="collapseExample">
+                            <i class="fa-solid fa-newspaper"></i> Sub Category
+
+                            <div class="sub-menu ">
+                                <ul id="collapseSubCategoriesManage" class="collapse">
+                                    <li>
+                                        <a asp-area="Admin" asp-controller="SubCategories" asp-action="Upsert"><i class="fa-solid fa-file-pen"></i> Create Sub-Category </a>
+                                    </li>
+                                    <li><a asp-area="Admin" asp-controller="SubCategories" asp-action="Index"><i class="fa-solid fa-gears"></i> Manage Sub-Category </a> </li>
+                                </ul>
+                            </div>
+
+                        </a>
+
+                    </li>
+
+
 
 
 
@@ -73,8 +95,8 @@
        
         
         
-        <div class="section">
-            <div class="top-menu">
+        <div class="section bg-success">
+            <div class="top-menu bg-success">
                 <div class="hamburger">
                     <a href="#"><i class="fa-solid fa-bars"></i></a>
                 </div>
@@ -84,6 +106,7 @@
 
         <div class="content-wrapper">
             <div class="admin-content">
+                <partial name="_NotificationPartial.cshtml" />
                 @RenderBody()
             </div>
 
@@ -92,11 +115,11 @@
 
 
 
-    <script src="https://code.jquery.com/jquery-3.6.3.min.js" integrity="sha256-pvPw+upLPUjgMXY0G+8O0xUf+/Im1MZjXxxgOcBQBXU=" crossorigin="anonymous"></script>
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
     <script type="text/javascript" src="https://cdn.datatables.net/v/dt/dt-1.13.1/datatables.min.js"></script>
-   
-  
+    <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script src="https://cdn.tiny.cloud/1/vtbphvlrizn575somatoppec5uys5et78jnsbq7dma5ei3vg/tinymce/6/tinymce.min.js" referrerpolicy="origin"></script>
     <script>
         let hamburger = document.querySelector(".hamburger");
         hamburger.addEventListener("click", function () {

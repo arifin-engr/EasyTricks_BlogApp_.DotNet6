@@ -8,23 +8,33 @@
         <div class="col-md-12">
 
             <form method="post" asp-action="Upsert">
+      
                 <input hidden asp-for="Category.Id" />
                 <div class="border mb-2 p-4">
                     <div class="page-title">
-                        
-                       @* <h2>@(Model.Category.Id == 0 ? "Create" : "Category") Category</h2>*@
+                       
+
+                       <h2 class="text-primary">@(Model.Category.Id == 0 ? "Create" : "Update") Category</h2>
                         <hr />
                     </div>
 
                     <div class="row">
 
                         <div class="mb-3">
-                            <label asp-for="Category.Title"></label>
-                            <input asp-for="Category.Title" class="form-control" />
-                            <span asp-validation-for="Category.Title" class="text-danger"></span>
+                            <label asp-for="Category.Name"></label>
+                            <input asp-for="Category.Name" class="form-control" />
+                            <span asp-validation-for="Category.Name" class="text-danger"></span>
                         </div>
                         <div class="mb-3">
-                            <button class="btn btn-primary" type="submit" width="150px">Submit</button>
+                            @if (Model.Category.Id==0)
+                            {
+                                <button class="btn btn-primary" type="submit" width="150px">Submit</button>
+                            }
+                            else
+                            {
+                                  <button class="btn btn-primary" type="submit" width="150px">Update</button>
+                            }
+                           
                             <a asp-action="Index" class="btn btn-secondary" width="150px">Back to List</a>
                         </div>
                         
@@ -42,4 +52,6 @@
     @{
         <partial name="_ValidationScriptsPartial.cshtml" />
     }
+
+  
 }
