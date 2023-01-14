@@ -1,4 +1,10 @@
-﻿<!DOCTYPE html>
+﻿@using EasyTricks.Models.AppEntity;
+@using Microsoft.AspNetCore.Identity
+
+@inject SignInManager<IdentityUser> SignInManager
+@inject UserManager<IdentityUser> UserManager
+
+<!DOCTYPE html>
 
 <html>
 <head>
@@ -26,7 +32,7 @@
        @* side bar*@
         <div class="side-bar bg-primary">
             <div class="sider-bar-top bg-success">
-                <a asp-area="Admin" asp-controller="Dashboared" asp-action="Index">
+                <a asp-area="SimpleUser" asp-controller="Home" asp-action="Index">
                     <img src="~/images/customImages/adminLogo.png" alt="">
                     <h4>Easy Tricks</h4>
                 </a>
@@ -161,11 +167,19 @@
                 <div class="dropdown admin-custom-profile-link">
                     <a class="bordered user-brand dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-bs-toggle="dropdown" aria-expanded="false">
                         <img class="user-image-navbar" src="~/images/customImages/user-icon.jpg">
-                        <span class="user-name text-light">SA </span>
+                        <span class="user-name text-light">@UserManager.GetUserName(User) </span>
                     </a>
                     <ul class="dropdown-menu" aria-labelledby="dropdownMenuLink">
                         <li class="nav-item">
                             <a id="manage" class="dropdown-item" asp-area="Identity" asp-page="/Account/Manage/Index" title="Manage">Hello SA!</a>
+                        </li>
+                        <li class="nav-item">
+                            <a id="manage" class="dropdown-item" asp-area="SimpleUser" asp-controller="Home" asp-action="Index">View Site</a>
+                        </li>
+                        <li class="nav-item">
+                            <form id="logoutForm" class="form-inline" asp-area="Identity" asp-page="/Account/Logout" asp-route-returnUrl="@Url.Action("Index", "Home", new { area = "" })">
+                                <button id="logout" type="submit" class="dropdown-item">Logout</button>
+                            </form>
                         </li>
                     </ul>
                 </div>

@@ -25,7 +25,7 @@ namespace EasyTricks.DAL.Data
 
         public void AssignRole(IdentityUser user, string role)
         {
-            _userManager.AddToRoleAsync(user, role);
+            var res=_userManager.AddToRoleAsync(user, role).Result;
         }
 
         public IEnumerable<IdentityRole> GetAllRole()

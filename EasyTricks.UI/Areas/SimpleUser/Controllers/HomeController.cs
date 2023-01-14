@@ -1,4 +1,5 @@
 ﻿using EasyTricks.DAL.Repositories.IRepositories;
+using EasyTricks.Models.AppVM;
 using Microsoft.AspNetCore.Mvc;
 
 namespace EasyTricks.UI.Areas.SimpleUser.Controllers
@@ -17,6 +18,13 @@ namespace EasyTricks.UI.Areas.SimpleUser.Controllers
 
 
             return View(unitOfWork.Article.GetAll().ToList());
+        }
+        public IActionResult Details(int ?id)
+        {
+            var article = new ArticleVM();
+             article.Article = unitOfWork.Article.GetFirstOrDefault(x => x.Id == id);
+
+            return View(article);
         }
     }
 }

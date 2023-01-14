@@ -12,6 +12,7 @@ namespace EasyTricks.Models.AppEntity
         [Key]
         public int Id { get; set; }
         public DateTime CreatedDate { get; set; }
+        [DisplayFormat(DataFormatString = "{0:dd'/'MM'/'yyyy}", ApplyFormatInEditMode = true)]
         public DateTime ModifiedDate { get; set; }
     }
 }

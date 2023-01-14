@@ -12,9 +12,9 @@
                         <div class="row post-row">
                             @foreach (var item in Model)
                             {
-                                <div class="col-12 col-md-4">
+                                <div class="col-12 col-md-4 my-3">
                                     <div class="post-block-container">
-                                        <a class="post-block" href="/post/tell-dont-ask-design-principle">
+                                        <a class="post-block" asp-action="Details" asp-route-id="@item.Id">
                                             <div class="row">
                                                 <div class="col-12 post-title">@item.Title</div>
                                             </div>

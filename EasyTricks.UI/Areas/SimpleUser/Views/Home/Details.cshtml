@@ -1,0 +1,33 @@
+﻿ @model ArticleVM
+@{
+    ViewData["Title"] = "Details";
+}
+<div class="containerc px-4" >
+    <div class="pt-4">
+        <div  class="row">
+    <div class="col-md-8">
+                <h2>@Model.Article.Title</h2>
+    </div>
+    <div class="col-md-4">
+                <div class="text-end">
+                    <span class="px-2 text-secondary"><i>@Model.Article.Author</i> </span> <br />
+                    <span class="px-2 text-danger">@Model.Article.ModifiedDate.ToString("dd MMM yyyy")</span>
+                </div>
+    </div>
+   
+</div>
+        <hr />
+</div>
+</div>
+
+
+
+<div class="container px-4">
+  
+    <div class="pb-2">
+        <p>
+            @Html.Raw( Model.Article.Description)
+        </p>
+    </div>
+</div>
+
