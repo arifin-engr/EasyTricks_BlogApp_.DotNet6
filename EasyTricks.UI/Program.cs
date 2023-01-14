@@ -1,9 +1,11 @@
-using EasyTricks.DAL.Data;
+
 using EasyTricks.DAL.Repositories.IRepositories;
 using EasyTricks.DAL.Repositories;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.Extensions.DependencyInjection;
+using EasyTricks.Models.AppEntity;
+using EasyTricks.DAL.Data;
 
 var builder = WebApplication.CreateBuilder(args);
 

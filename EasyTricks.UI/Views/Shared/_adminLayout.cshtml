@@ -12,6 +12,13 @@
 
     <link rel="stylesheet" href="~/css/admin.css" />
     <link rel="stylesheet" href="~/css/site.css" />
+    <style>
+        .admin-custom-profile-link {
+            margin-right: 25px;
+            width: 100%;
+            text-align: end;
+        }
+    </style>
 </head>
 <body>
     <div class="wrapper">
@@ -89,6 +96,55 @@
 
 
                 </ul>
+
+
+                <ul>
+                    <li class="nav-title">User Control</li>
+
+                    <li class="sidebar-item">
+                        <a class="" data-bs-toggle="collapse" href="#collapseUserManange" role="button" aria-expanded="false" aria-controls="collapseExample">
+                            <i class="fa-solid fa-newspaper"></i> User
+
+                            <div class="sub-menu ">
+                                <ul id="collapseUserManange" class="collapse">
+                                    <li>
+                                        <a asp-area="Admin" asp-controller="AccessManagers" asp-action="UserList"><i class="fa-solid fa-file-pen"></i> All User </a>
+                                    </li>
+                                    <li><a asp-area="Admin" asp-controller="AccessManagers" asp-action="UserManager"><i class="fa-solid fa-gears"></i> Manage User </a> </li>
+                                </ul>
+                            </div>
+
+                        </a>
+
+                    </li>
+
+
+
+                    <li class="sidebar-item">
+                        <a class="" data-bs-toggle="collapse" href="#collapseRoleManage" role="button" aria-expanded="false" aria-controls="collapseExample">
+                            <i class="fa-solid fa-newspaper"></i> Role
+
+                            <div class="sub-menu ">
+                                <ul id="collapseRoleManage" class="collapse">
+                                    <li>
+                                        <a asp-area="Admin" asp-controller="AccessManagers" asp-action="UpsertRole"><i class="fa-solid fa-file-pen"></i> Create Role </a>
+                                    </li>
+                                    <li><a asp-area="Admin" asp-controller="AccessManagers" asp-action="RoleManager"><i class="fa-solid fa-gears"></i> Manage Role </a> </li>
+                                </ul>
+                            </div>
+
+                        </a>
+
+                    </li>
+
+
+                    
+
+
+
+
+
+                </ul>
             </div>
         </div>
 
@@ -99,6 +155,19 @@
             <div class="top-menu bg-success">
                 <div class="hamburger">
                     <a href="#"><i class="fa-solid fa-bars"></i></a>
+                   
+                </div>
+
+                <div class="dropdown admin-custom-profile-link">
+                    <a class="bordered user-brand dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-bs-toggle="dropdown" aria-expanded="false">
+                        <img class="user-image-navbar" src="~/images/customImages/user-icon.jpg">
+                        <span class="user-name text-light">SA </span>
+                    </a>
+                    <ul class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+                        <li class="nav-item">
+                            <a id="manage" class="dropdown-item" asp-area="Identity" asp-page="/Account/Manage/Index" title="Manage">Hello SA!</a>
+                        </li>
+                    </ul>
                 </div>
             </div>
         </div>

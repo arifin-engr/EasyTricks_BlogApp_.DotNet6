@@ -37,7 +37,7 @@ namespace EasyTricks.DAL.Data
             const string _userName = "sa";
             const string _password = "555555";
             const string _email = "admin@gmail.com";
-           
+
             _userName.Trim();
             _password.Trim();
             _email.Trim();
@@ -55,7 +55,7 @@ namespace EasyTricks.DAL.Data
                 appUser.UserName = _userName;
                 appUser.Email = _email;
                 appUser.EmailConfirmed = true;
-              
+
 
                 //    //_userManager = new UserManager<AppUser>();
                 IdentityResult result = _userManager.CreateAsync(appUser, _password).Result;

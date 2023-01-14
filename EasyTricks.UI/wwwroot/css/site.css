@@ -27,3 +27,21 @@ img.nav-image {
 .button-group.custom-btn {
     display: flex;
 }
+img.user-image-navbar {
+    width: 50px;
+    height: 50px;
+}
+.custom-profile-link {
+    margin-right: 25px;
+    width: 10%;
+}
+a.user-brand {
+    text-decoration: none;
+}
+span.user-name {
+    text-decoration: none;
+    padding-left: 10px;
+    color: green;
+    font-size: 20px;
+    font-weight: 700;
+}
