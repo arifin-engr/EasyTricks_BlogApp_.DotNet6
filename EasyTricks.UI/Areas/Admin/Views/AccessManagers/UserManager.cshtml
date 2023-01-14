@@ -1,7 +1,61 @@
-﻿
+﻿@model UserManagerVM
 @{
     ViewData["Title"] = "UserManager";
 }
 
-<h1>UserManager</h1>
+<div class="py-3">
+    <div class="row p-4">
+        <div class="col-md-12">
 
+            <form method="post" asp-action="UserManager">
+                <div asp-validation-summary="All" class="text-danger"></div>
+                <input hidden asp-for="User.Id" />
+                <div class="border mb-2 p-4">
+                    <div class="page-title">
+
+
+                        <h2 class="text-primary"> Update User Role</h2>
+                        <hr />
+                    </div>
+
+                    <div class="row">
+
+                        <div class="mb-3">
+                            <label asp-for="User.UserName"></label>
+                           <input asp-for="User.UserName" disabled class="form-control" />
+                           
+                            
+                        </div>
+                         <div class="mb-3">
+                            <label >Role</label>
+                            <select asp-for="Role"  class="form-select" asp-items="Model.Roles" >
+                                <option selected disabled>Select Category</option>
+                            </select>
+                            <span asp-validation-for="Role"  class="text-danger"></span>
+                        </div>
+                        <div class="mb-3">
+                           
+                            
+                                <button class="btn btn-primary" type="submit" width="150px">Update</button>
+                            
+
+                            <a asp-action="UserList" class="btn btn-secondary" width="150px">Back to List</a>
+                        </div>
+
+                    </div>
+
+                </div>
+            </form>
+
+        </div>
+    </div>
+</div>
+
+@section Scripts
+    {
+    @{
+        <partial name="_ValidationScriptsPartial.cshtml" />
+    }
+
+
+}

@@ -3,11 +3,11 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.4.33205.214
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EasyTricks.UI", "EasyTricks.UI\EasyTricks.UI.csproj", "{22735DE4-08BE-44F0-829E-EA118FE84BBA}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "EasyTricks.UI", "EasyTricks.UI\EasyTricks.UI.csproj", "{22735DE4-08BE-44F0-829E-EA118FE84BBA}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EasyTricks.DAL", "EasyTricks.DAL\EasyTricks.DAL.csproj", "{44113E70-38EF-4854-8884-CDBF2285D799}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "EasyTricks.DAL", "EasyTricks.DAL\EasyTricks.DAL.csproj", "{44113E70-38EF-4854-8884-CDBF2285D799}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EasyTricks.Models", "EasyTricks.Models\EasyTricks.Models.csproj", "{6D0C349A-17DA-4025-BEDF-6D4A5FCD22CE}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "EasyTricks.Models", "EasyTricks.Models\EasyTricks.Models.csproj", "{6D0C349A-17DA-4025-BEDF-6D4A5FCD22CE}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

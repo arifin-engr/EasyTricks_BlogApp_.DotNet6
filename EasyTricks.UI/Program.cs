@@ -35,7 +35,7 @@ builder.Services.AddMvc();
 
 
 builder.Services.AddControllersWithViews();
-
+builder.Services.AddIdentityCore<IdentityUser>();
 builder.Services.AddTransient<IDbInitializer, DbInitializer>();
 builder.Services.AddTransient<IUnitOfWork, UnitOfWork>();
 

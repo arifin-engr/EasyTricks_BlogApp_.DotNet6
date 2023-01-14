@@ -1,11 +1,13 @@
 ﻿using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
+
 using EasyTricks.Models;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Microsoft.PowerBI.Api.Models;
 
 namespace EasyTricks.DAL.Data
 {
@@ -20,6 +22,30 @@ namespace EasyTricks.DAL.Data
             _roleManager = roleManager;
             _userManager = userManager;
         }
+
+        public void AssignRole(IdentityUser user, string role)
+        {
+            _userManager.AddToRoleAsync(user, role);
+        }
+
+        public IEnumerable<IdentityRole> GetAllRole()
+        {
+            var roles=_db.Roles.ToList();
+            return roles;
+        }
+
+        public IEnumerable<IdentityUser> GetAllUser()
+        {
+            var users = _db.Users.ToList();
+            return users;
+        }
+
+        public async Task<IdentityUser> GetUserById(string id)
+        {
+            var user = await _userManager.FindByIdAsync(id);
+            return user;
+        }
+
         public async void seed()
         {
 
@@ -75,5 +101,7 @@ namespace EasyTricks.DAL.Data
                 }
             }
         }
+
+       
     }
 }
